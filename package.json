@@ -1,0 +1,27 @@
+{
+  "name": "REP_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lt3kr/REP_server.git"
+  },
+  "keywords": [],
+  "author": "Liam Turelid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lt3kr/REP_server/issues"
+  },
+  "homepage": "https://github.com/Lt3kr/REP_server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.18"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
