@@ -19,4 +19,10 @@ app.post("/contact", (res, req) =>{
     res.redirect("/");
 })
 
+app.post("/signUp", (res, req) => {
+    console.log(req.body.uName);
+    console.log(req.body.password);
+    res.redirect("/")
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
