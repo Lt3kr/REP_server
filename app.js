@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const staticdir = __dirname + "\\static\\";
+const användareModel = require("./användare")
 
 app.use(express.static(staticdir));
 app.use(express.urlencoded());
