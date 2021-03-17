@@ -1,8 +1,16 @@
 const mongoose = require("mongoose")
 
 const userSchema = new mongoose.Schema({
-    Namn: String,
-    Password: String
+    uName: String,
+    password: String
 });
 
-const användare = mongoose.model()
+const Användare = mongoose.model("Användare", userSchema);
+
+exports.saveAnvändare = function (inUser, inPassword) {
+    var user = new Användare({
+        uName: inUser,
+        password: inPassword
+    });
+    user.save();
+};

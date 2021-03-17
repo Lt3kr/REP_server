@@ -1,4 +1,5 @@
 const express = require('express');
+const databaseModule = require("./databaseModule")
 const app = express();
 const port = 3000;
 const staticdir = __dirname + "\\static\\";
@@ -10,19 +11,8 @@ app.use(express.json());
 
 app.get('/', (req, res) => res.sendFile(staticdir + "html\\index.html"));
 
-app.get("/contact", (req, res) =>
-    res.sendFile(staticdir + "html\\contact.html")
-);
-
-app.post("/contact", (res, req) =>{
-    console.log(req.body.Fname);
-    console.log(req.body.Date);
-    res.redirect("/");
-})
-
-app.post("/signUp", (res, req) => {
-    console.log(req.body.uName);
-    console.log(req.body.password);
+app.post("/signUp", async (req, res) => {
+    användareModel.saveAnvändare(req.body.User, req.body.password)
     res.redirect("/")
 })
 
