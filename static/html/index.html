@@ -14,10 +14,19 @@
             <div class="SignUp"></div>
                 <label for="User">User name:</label>
                 <input type="text" name="User" id="User">
-                <label for="Password">Password:</label>
+                <label for="password">Password:</label>
                 <input type="password" name="password" id="password">
             </div>
             <button type="submit" class="btn btn-dark">Registrera</button>
+        </form>
+        <form action="/logIn" method="POST">
+            <div class="login">
+                <label for="User">User</label>
+                <input type="text" name="User" id="User">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <button type="submit" class="btn btn-dark">Log in</button>
         </form>
     <!--Sedan är det login-->
 </body>
