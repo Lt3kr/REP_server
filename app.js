@@ -21,7 +21,7 @@ app.post("/signUp", async (req, res) => {
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 app.post("/logIn", async (req, res) => {
-    const user = await användareModel.saveAnvändare(req.body.User);
+    const user = await användareModel.getUser(req.body.User);
     await bcrypt.compare(req.body.password, user.password, (err, success) => {
         if (err){
             console.log(err);

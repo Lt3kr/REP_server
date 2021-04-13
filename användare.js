@@ -14,3 +14,7 @@ exports.saveAnvändare = function (inUser, inPassword) {
     });
     user.save();
 };
+
+exports.getUser = async function (Uuser){
+    return await Användare.findOne({ uName: Uuser });
+}
