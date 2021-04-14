@@ -30,5 +30,5 @@ app.post("/logIn", async (req, res) => {
         if (success) console.log("success");
         else console.log("Fail");
     });
-    res.redirect("/");
+    res.redirect("/html//buystuff.html");
 });
