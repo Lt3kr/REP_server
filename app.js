@@ -10,6 +10,8 @@ app.use(express.static(staticdir));
 app.use(express.urlencoded());
 app.use(express.json());
 
+app.set("view engine", "ejs");
+
 app.get('/', (req, res) => res.sendFile(staticdir + "html\\index.html"));
 
 app.post("/signUp", async (req, res) => {
@@ -30,5 +32,5 @@ app.post("/logIn", async (req, res) => {
         if (success) console.log("success");
         else console.log("Fail");
     });
-    res.redirect("/html//buystuff.html");
+    res.render("kundvagn.ejs");
 });
