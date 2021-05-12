@@ -24,13 +24,13 @@
             <table id="list"></table>
             <label><input type="button" value="Clear" onclick="ClearAll()">
                 * Delete all items</label>
-            <input type="button" value="Save" onclick="PushSave()">
+            <input type="button" value="" id="Spara" onclick="SaveList()">
             <ul id="Visa_lista"></ul>
         </div>
 
         <script>
         const items = [];
-        function SaveItem()
+        function SaveItem() {
             var sak = document.getElementById("name").value;
             var antal = document.getElementById("data").value;
             var allt = sak + " " + antal;
@@ -38,6 +38,17 @@
         if (allt) {
             items.push(allt);
             document.getElementById("Visa_lista").innerHTML = items;
+        }
+    }
+        function SaveList(){
+            var xhttp = new XMLHttpRequest();
+                    var apa = document.getElementById("Visa_lista").textContent;
+                    let json = JSON.stringify({
+                        KöpListan: apa
+                    });
+                    xhttp.open("POST", "leaderboard", true)
+                    xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                    xhttp.send(json);
         }
         </script>
 

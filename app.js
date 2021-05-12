@@ -5,6 +5,7 @@ const port = 3000;
 const staticdir = __dirname + "\\static\\";
 const användareModel = require("./användare");
 const bcrypt = require("bcryptjs");
+const { sparadeSaker } = require('./SparadeSaker');
 
 app.use(express.static(staticdir));
 app.use(express.urlencoded());
@@ -33,4 +34,9 @@ app.post("/logIn", async (req, res) => {
         else console.log("Fail");
     });
     res.render("kundvagn.ejs");
+});
+
+app.post("/Sparade_saker", async (req, res) => {
+    Köplista.sparadeSaker(req.body.Spara);
+
 });
