@@ -24,7 +24,7 @@
             <table id="list"></table>
             <label><input type="button" value="Clear" onclick="ClearAll()">
                 * Delete all items</label>
-            <input type="button" value="" id="Spara" onclick="SaveList()">
+            <input type="button" value="Köp" id="Spara" onclick="SaveList()">
             <ul id="Visa_lista"></ul>
         </div>
 
@@ -46,7 +46,7 @@
                     let json = JSON.stringify({
                         KöpListan: apa
                     });
-                    xhttp.open("POST", "leaderboard", true)
+                    xhttp.open("POST", "SparadeSaker", true)
                     xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
                     xhttp.send(json);
         }

@@ -1,18 +1,18 @@
 const mongoose = require("mongoose")
 
-const köptSchema = new mongoose.Schema({
-    uSpara: String
+const köpSchema = new mongoose.Schema({
+    Köplistan: String
 });
 
 const Köplista = mongoose.model("Köplista", köpSchema);
 
-exports.sparadeSaker = function (inSpara) {
-    var lista = new Köplista ({
-        uSpara:inSpara
+exports.saveLista = function (inSpara) {
+    var Köplistan = new Köplista ({
+        Köplistan: inSpara
     });
-    lista.save();
+    Köplistan.save();
 };
 
 exports.getKöplista = async function (USpara){
-    return await Köplista.findOne({ uSpara: USpara });
+    return await Köplista.findOne();
 }
