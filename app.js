@@ -30,13 +30,21 @@ app.post("/logIn", async (req, res) => {
             console.log(err);
         }
         
-        if (success) console.log("success");
+        if (success){ 
+            console.log("success");
+            res.render("kundvagn.ejs");
+        }
         else console.log("Fail");
     });
-    res.render("kundvagn.ejs");
 });
 
 app.post("/SparadeSaker", async (req, res) => {
-    SparadeSaker.saveLista(req.body.Köplistan);
+    SparadeSaker.saveLista(req.body.Koplistan);
+    console.log(req.body.Koplistan);
     res.render("kundvagn.ejs");
+});
+
+app.get("/kundvagn", async (req, res) => {
+    const köpt = await SparadeSaker.getKöplista();
+    res.render("./kundvagn.ejs", { Recent: köpt });
 });
